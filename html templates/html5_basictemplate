@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+
+    <title>Hello World</title>
+</head>
+<body>
+    <header>
+    </header>
+
+        <p>This is a <p> tag which stands for paragrapg. Erase this and type something here!! Make sure you save it and type in between the tags!</p>
+
+    <footer>
+    </footer>
+
+</body>
+</html>
