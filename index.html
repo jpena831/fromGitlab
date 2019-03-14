@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KatHacks Synth Machine</title>
+<audio id="meow1" controls style="display:none">
+        <source src="meow1.mp3" type="audio/mpeg" > Your browser does not support the audio element.
+</audio>
+<audio id="meow2" controls style="display:none">
+        <source src="meow2.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+</audio>
+<audio id="meow3" controls style="display:none">
+        <source src="meow3.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+</audio>
+<audio id="meow4" controls style="display:none">
+        <source src="meow4.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+</audio>
+      
+</head>
+<script>
+    document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 37){
+    document.getElementById('meow1').play();
+  }
+});
+  document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 38){
+    document.getElementById('meow2').play();
+  }
+});
+  document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 39){
+    document.getElementById('meow3').play();
+  }
+});
+  document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 40){
+    document.getElementById('meow4').play();
+  }
+});
+
+</script>
+<style>
+    body{
+    font-family: "Courier New", Courier, monospace;
+    }
+</style>
+<body>
+<h1>
+    KATHACKS 2K19 SYNTH TIME
+</h1>
+<h2>
+    press the keys for cats
+</h2>
+</body>
+</html>
