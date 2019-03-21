@@ -1,0 +1,125 @@
+<!doctype html>
+<!-- joslenne pena -->
+<html>
+    <head>
+        <meta  charset=utf-8 />
+        <title>Index - Sample Page with CSS3</title>
+		
+		<link rel="stylesheet" type="text/css" href="basicstyles.css" />
+		
+        <!--CSS 3 -->
+        <style type="text/css">
+		
+			aside {
+				border-radius:1em;
+				-moz-border-radius:1em; /*mozilla vendor specific */
+				-webkit-border-radius:1em;	/*safari vendor specifc*/
+			}
+			
+			#container p:last-of-type{
+					color:green;	
+			}
+			
+			p:first-of-type{		
+				color:blue;
+			}
+			
+			table tbody tr:nth-child(odd){
+					background-color:#ffff99;	
+			}
+			
+			nav li {
+				text-shadow: 2px 2px 3px #960;
+			}
+			
+			table caption{
+				text-shadow:0px 0px 4px white,
+						0px -5px 4px rgb(255, 255, 51),
+						2px -10px 4px rgb(255, 221, 51),
+						-2px -15px 11px rgb(255, 136, 0),
+						2px -25px 18px rgb(255, 34, 0);						
+			}
+			
+			nav ul{
+				-moz-box-shadow:2px 2px 3px black;	
+				
+			}
+			
+			#container{
+				/*opacity: .5;*/	
+				background-color:rgba(255, 255, 255, .5);
+			}
+			
+			#container p:nth-child(7)/*7th child is the 3rd paragraph*/
+			{
+				-moz-column-count: 2;	
+			}
+		</style>
+    </head>
+    <body>
+    	
+		<div id="container">
+			
+			
+   <header>
+        	<nav>
+    		<ul>
+    			<li><a href="index.html">Home</a></li><li><a href="sched.html">Schedule</a></li><li><a href="proj.html">Projects</a></li><li><a href="classes.html">Classes</a></li><li><a href="fun.html">For Fun</a></li>
+    		</ul>
+			
+    	</nav>
+	</header>	
+        <h1>Welcome to My CSS3 Demo Page</h1>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur commodo ipsum in viverra. Sed viverra ultricies tincidunt. Mauris et nibh eros. Nam diam diam, imperdiet sed facilisis vel, fringilla venenatis arcu. Nullam ut tempor mauris. Etiam mattis libero in orci pharetra hendrerit. Aliquam ultrices risus nibh, sit amet porta purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras dolor leo, molestie sit amet elementum et, porta sed velit. Maecenas bibendum, leo sit amet iaculis vulputate, velit erat commodo ante, id fermentum urna eros adipiscing nulla. Maecenas condimentum velit non nibh luctus volutpat. Mauris nec consequat nulla. Sed sit amet neque enim. Donec vel magna velit. Duis nec felis vel metus imperdiet malesuada ac id diam. Suspendisse lectus velit, rhoncus ut placerat at, tincidunt ac risus. Curabitur sed accumsan eros. Vivamus magna urna, laoreet in facilisis eget, luctus vel lacus.</p>
+
+		<aside>"Phasellus consectetur commodo ipsum in viverra. Sed viverra ultricies tincidunt."</aside>
+
+		<p>Morbi purus nunc, volutpat sit amet luctus vel, vestibulum sit amet eros. Praesent facilisis semper sem, eget ultricies tellus eleifend vitae. Suspendisse eget ligula libero. Donec tellus massa, molestie at fringilla ut, laoreet in tellus. Curabitur metus velit, malesuada et facilisis a, adipiscing eu ligula. Cras metus sem, faucibus vitae hendrerit eget, sagittis eu tortor. Aenean in nisi metus. Quisque non magna vitae turpis consequat gravida. Praesent egestas, augue vitae luctus tincidunt, nulla purus adipiscing sem, vitae scelerisque ligula enim nec arcu. Sed eu rhoncus magna. Duis venenatis elit a tortor volutpat dignissim. Curabitur scelerisque lorem tortor, id venenatis ipsum. Mauris ornare dictum elementum. Fusce a neque id velit dapibus egestas. Praesent ornare, sem a euismod venenatis, eros mi aliquam metus, in interdum turpis orci non tortor. Maecenas nulla leo, lacinia id ultricies eget, sodales a nibh. Vestibulum vitae ligula sit amet velit pulvinar placerat nec id nisi. Aliquam quis odio ut nibh consequat ornare non sit amet velit. Ut commodo feugiat ante, vitae ultrices mi adipiscing a.</p>
+
+		<table>
+			<caption>Today's Schedule</caption>
+			<thead>
+				<tr>
+					<th>Meeting</th><th>Time</th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>MWD110</td>
+					<td>10:30am - 12:00pm</td>
+				</tr>
+				<tr>
+					<td>Lunch</td>
+					<td>12:00pm - 1:00pm</td>				
+				</tr>
+				<tr>
+					<td>Research Meeting</td>
+					<td>1:30pm - 3:00pm</td>				
+				</tr>
+				<tr>
+					<td>Office Hours</td>
+					<td>3:00pm - 4:00pm</td>
+				</tr>
+				<tr>
+					<td>CS175</td>
+					<td>5:00pm - 6:15pm</td>
+				</tr>
+				<tr>
+					<td>Fly Home for Turkey</td>
+					<td>8:00pm - </td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Etiam luctus malesuada fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec consectetur nulla nec libero vehicula bibendum. Etiam molestie, est vitae vehicula tristique, diam orci interdum elit, rhoncus ornare mi nisl vel neque. Nulla aliquam suscipit nunc in porta. Donec ultrices sodales sem, a aliquam urna luctus ut. Phasellus eget nunc felis. Nunc tellus metus, pretium vel porta id, sagittis eu quam. Maecenas vel nibh sed eros vulputate viverra. Sed a fermentum lacus. Duis non magna lacus, sit amet bibendum ipsum. Nunc ullamcorper commodo pharetra. Sed convallis mollis sapien. Donec mi nunc, sagittis id pretium vestibulum, eleifend sit amet quam. Ut vel sapien magna. Nullam vitae quam nunc, vitae accumsan massa. In urna neque, blandit blandit vulputate ac, blandit egestas erat. Pellentesque cursus, metus sit amet consectetur vestibulum, justo nibh consequat dui, eget sagittis lacus dui eu ipsum. Proin condimentum, lectus sit amet malesuada auctor, velit dui scelerisque velit, ultricies mollis diam arcu aliquam orci.</p>
+
+		<p>Nulla varius diam a dui accumsan eu iaculis mi accumsan. Nullam feugiat convallis magna, nec aliquet nisi egestas vel. Proin sit amet nulla urna, a iaculis neque. Phasellus tempus odio vitae nibh auctor auctor. Nam suscipit elementum mauris at dictum. Nunc eu ultrices lacus. Quisque venenatis odio ac ante tincidunt ullamcorper. Donec et enim non dui bibendum adipiscing sit amet vel felis. Quisque dignissim sapien in ligula dictum a luctus enim ultricies. In sed ipsum massa. Nulla facilisi. Aliquam fermentum augue non nulla placerat egestas. Suspendisse blandit, neque sit amet suscipit venenatis, mauris ligula lobortis ligula, eget mattis dui dolor hendrerit purus. Fusce auctor rhoncus velit at accumsan.</p>
+
+		
+
+		
+		</div>
+		
+    </body>
+</html>
