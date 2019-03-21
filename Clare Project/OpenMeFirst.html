@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!--unicode character set, you can code using emojis, but you shouldnt-->
+    <link rel="stylesheet" type="text/css" href="moreCSSw4.css">
+    <link rel="shortcut icon" href="fall.ico" type="image/x-icon">
+    <title>Clurr's projet final</title>
+    <!--CSS 3-->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+        @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+        h1 {
+            font-family: 'Shadows Into Light', cursive;
+            color: #A25C05;
+            text-align: center;
+        }
+
+        aside {
+            border-radius: 1em;
+            -moz-border-radius: 1em;
+            /*for Firefox*/
+            -webkit-border-radius: 1em;
+            /*for Safari*/
+        }
+
+        #container p:last-of-type {
+            /*p:lastoftype refers to the last paragraph*/
+            color: #7B8D6D;
+        }
+
+        p:first-of-type {
+            color: #7B403D;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #FEAE94;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: rgba(254, 175, 148, 0.616);
+        }
+
+        /*nav li {
+            text-shadow: 3px 3px 6px #CD5B56;
+        }*/
+
+        table caption {
+            text-shadow: 0px 1px 4px white,
+                0px -5px 4px #7B8D6D,
+                2px -10px 4px #A0B88E,
+                -2px -15px 11px #FF8F7A,
+                2px -25px 18px #A0B88E;
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        nav ul {
+            -moz-box-shadow: 2px 2px 3px black;
+        }
+
+        #container {
+            /*opacity: .5;*/
+            background-color: rgb(255, 255, 255, .5)
+        }
+
+        #container p:nth-child(7) {
+            -moz-column-count: 2;
+        }
+
+        li {
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        /*the negative values in the second column are how many pixels the text shadow will be displaced by*/
+    </style>
+
+</head>
+
+<body>
+
+    <!--containers organize your webpage, ours contains our info-->
+    <div id="container">
+        <h1>Code with Clurr</h1>
+        <header>
+            <nav>
+                <!--This is our navigation bar, we have an unordered list bc the order 
+                    of the nav bar doesnt matter.-->
+                <ul>
+                    <li><a href="Clurr3.html">Doggo</a></li>
+                    <li><a href="Hashimotos.html">Hashimotos</a></li>
+                    <li><a href="FinalProject.html">Study Abroad</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <p>
+            This semester, I was a part of the course "Code for Her" at Penn State University. Throughout this couse,
+            we learned the basics of html, CSS, and JavaScript. The purpose of creating this course - thank you Carmen
+            Cole - was to allow a space in which females, and gender-diverse students could learn to code.
+        </p>
+        <aside>
+            Welcome! On my page you will find some things that I have done throughout the Code for Her Fall 2017
+            Course!
+        </aside>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet erat dapibus ligula
+            ullamcorper posuere. Maecenas dictum magna vitae placerat viverra. Sed vel justo sed erat finibus hendrerit
+            non vitae arcu. Praesent tempor vel lectus et ornare. Donec semper, lorem finibus malesuada feugiat, est
+            risus semper diam, a imperdiet sapien lacus at ipsum. Vestibulum ante ipsum primis in faucibus orci luctus
+            et ultrices posuere cubilia Curae; Nulla ipsum urna, sagittis quis libero vel, luctus efficitur lacus.
+            Fusce consectetur varius volutpat. Proin vitae sodales mi, vel dictum dui. Integer a mauris facilisis,
+            porttitor turpis in, aliquet sem. Nulla sit amet facilisis arcu, mattis blandit nisl. Ut sed velit vitae
+            magna porta commodo ac vitae dolor.
+        </p>
+        <table>
+            <!--document object model -- look it up-->
+            <caption>Dis mah sched</caption>
+            <thead>
+                <tr>
+                    <th>Let's meet</th>
+                    <!--th makes this bold as opposed to td which isnt bold-->
+                    <th>Time hunnie</th>
+                    <th>Endroit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MWD110</td>
+                    <td>10:30am - 12:30pm</td>
+                    <td>the treehouse</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>lunch time</td>
+                    <td>the saloon</td>
+                </tr>
+                <tr>
+                    <td>Tea</td>
+                    <td>tea time</td>
+                    <td>The Queen's bedroom</td>
+                </tr>
+                <tr>
+                    <td>Cooking</td>
+                    <td>cooking time</td>
+                    <td>the kitchen</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet erat dapibus ligula
+            ullamcorper posuere. Maecenas dictum magna vitae placerat viverra. Sed vel justo sed erat finibus hendrerit
+            non vitae arcu. Praesent tempor vel lectus et ornare. Donec semper, lorem finibus malesuada feugiat, est
+            risus semper diam, a imperdiet sapien lacus at ipsum. Vestibulum ante ipsum primis in faucibus orci luctus
+            et ultrices posuere cubilia Curae; Nulla ipsum urna, sagittis quis libero vel, luctus efficitur lacus.
+            Fusce consectetur varius volutpat. Proin vitae sodales mi, vel dictum dui. Integer a mauris facilisis,
+            porttitor turpis in, aliquet sem. Nulla sit amet facilisis arcu, mattis blandit nisl. Ut sed velit vitae
+            magna porta commodo ac vitae dolor.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet erat dapibus ligula
+            ullamcorper posuere. Maecenas dictum magna vitae placerat viverra. Sed vel justo sed erat finibus hendrerit
+            non vitae arcu. Praesent tempor vel lectus et ornare. Donec semper, lorem finibus malesuada feugiat, est
+            risus semper diam, a imperdiet sapien lacus at ipsum. Vestibulum ante ipsum primis in faucibus orci luctus
+            et ultrices posuere cubilia Curae; Nulla ipsum urna, sagittis quis libero vel, luctus efficitur lacus.
+            Fusce consectetur varius volutpat. Proin vitae sodales mi, vel dictum dui. Integer a mauris facilisis,
+            porttitor turpis in, aliquet sem. Nulla sit amet facilisis arcu, mattis blandit nisl. Ut sed velit vitae
+            magna porta commodo ac vitae dolor.
+        </p>
+    </div>
+
+</body>
+
+</html>
