@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://leemark.github.io/better-simple-slideshow/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/demostyles.css">
+        <link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/simple-slideshow-styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <h1>A Better Simple Slideshow</h1>
+            <p><span class="desc">A simple DIY responsive JavaScript slideshow.</span> [<a href="https://github.com/leemark/better-simple-slideshow">GitHub<span> repo</span></a>]</p>
+        </header>    
+        <div class="bss-slides num1" tabindex="1" autofocus="autofocus" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <figure class="">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/medium.jpg" width="100%"><figcaption>"Medium" by <a href="https://www.flickr.com/photos/thomashawk/14586158819/">Thomas Hawk</a>.</figcaption> 
+            </figure>
+            <figure class="bss-show">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/colorado.jpg" width="100%"><figcaption>"Colorado" by <a href="https://www.flickr.com/photos/stuckincustoms/88370744">Trey Ratcliff</a>.</figcaption> 
+            </figure>
+            <figure class="">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/monte-vista.jpg" width="100%"><figcaption>"Early Morning at the Monte Vista Wildlife Refuge, Colorado" by <a href="https://www.flickr.com/photos/davesoldano/8572429635">Dave Soldano</a>.</figcaption> 
+            </figure>
+            <figure class="">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/sunrise.jpg" width="100%"><figcaption>"Sunrise in Eastern Colorado" by <a href="https://www.flickr.com/photos/35528040@N04/6673031153">Pam Morris</a>.</figcaption> 
+            </figure>
+            <figure class="">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/colorado-colors.jpg" width="100%"><figcaption>"colorado colors" by <a href="https://www.flickr.com/photos/cptspock/2857543585">Jasen Miller</a>.</figcaption> 
+            </figure>
+        <span class="bss-prev">«</span><span class="bss-next">»</span></div> <!-- // bss-slides -->  
+<div class="content">
+<h2>What is it?</h2>
+
+<p>It's a fairly basic slideshow, written in javascript. This is a dual-purpose project, it's meant to be something you can drop right into your page and use if you so choose, but it's also meant as an example/tutorial script showing how to build a simple DIY slideshow from scratch on your own. <a href="http://themarklee.com/2014/10/05/better-simple-slideshow/">Here is a tutorial/walkthrough</a>.</p>
+        
+<h2>Features</h2>
+<ul>
+    <li>fully responsive</li>
+    <li>option for auto-advancing slides, or manually advancing by user</li>
+    <li>multiple slideshows per-page</li>
+    <li>supports arrow-key navigation</li>
+    <li>full-screen toggle using HTML5 fullscreen api</li>
+    <li>swipe events supported on touch devices (requires <a href="https://github.com/hammerjs/hammer.js">hammer.js</a>)</li>
+    <li>written in vanilla JS--this means no jQuery dependency (much ♥ for <a href="https://github.com/jquery/jquery">jQuery</a> though!)</li>
+</ul>
+        
+<h2>Getting Started</h2>
+<ol>
+<li><p>HTML markup for the slideshow should look basically like this, with a container element wrapping the whole thing (doesn't have to be a <span class="code">&lt;div&gt;</span>) and each slide is a <span class="code">&lt;figure&gt;</span>.</p>
+
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/83571d9f8f0e3ad853a8.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14239761" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>slideshow-class-goes-here<span class="pl-pds">"</span></span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line">        &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path/to/img<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-html-LC4" class="blob-code blob-code-inner js-file-line">        &lt;<span class="pl-ent">figcaption</span>&gt;Caption goes here&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-html-LC5" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-html-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-html-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">&lt;!--</span> more figures here as needed <span class="pl-c">--&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-html-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-html-LC9" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">div</span>&gt;</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/83571d9f8f0e3ad853a8/raw/decd537230fbab82ae8939bc6bddc6582eefa5d8/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/83571d9f8f0e3ad853a8#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+ </li>   
+
+<li>Include the script: <span class="code">js/better-simple-slideshow.min.js</span> or <span class="code">js/better-simple-slideshow.js</span></li>
+<li>Include the stylesheet <span class="code">css/simple-slideshow-styles.css</span></li>
+<li>Initialize the slideshow:
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/479d4ecc4df38fba500c.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14239779" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  <span class="pl-en">makeBSS</span>(<span class="pl-s"><span class="pl-pds">'</span>.slideshow-class-goes-here<span class="pl-pds">'</span></span>);</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span>&lt;/<span class="pl-ent">script</span>&gt;</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/479d4ecc4df38fba500c/raw/76c37c6b05e98e26239c5bfac3f1ea2998c5b2fd/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/479d4ecc4df38fba500c#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+</li>
+</ol>
+<h2>Options</h2>
+
+To customize functionality, create an options object, then pass it into <span class="code">makeBSS()</span> as the second argument, as seen below:
+
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/c6e0f5c47acb7bf9be16.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14239740" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> opts <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-js-LC2" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span>auto-advancing slides? accepts boolean (true/false) or object</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-js-LC3" class="blob-code blob-code-inner js-file-line">            auto <span class="pl-k">:</span> { </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-js-LC4" class="blob-code blob-code-inner js-file-line">                <span class="pl-c"><span class="pl-c">//</span> speed to advance slides at. accepts number of milliseconds</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-js-LC5" class="blob-code blob-code-inner js-file-line">                speed <span class="pl-k">:</span> <span class="pl-c1">2500</span>, </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-js-LC6" class="blob-code blob-code-inner js-file-line">                <span class="pl-c"><span class="pl-c">//</span> pause advancing on mouseover? accepts boolean</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-js-LC7" class="blob-code blob-code-inner js-file-line">                pauseOnHover <span class="pl-k">:</span> <span class="pl-c1">true</span> </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-js-LC8" class="blob-code blob-code-inner js-file-line">            },</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-js-LC9" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span> show fullscreen toggle? accepts boolean</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-js-LC10" class="blob-code blob-code-inner js-file-line">            fullScreen <span class="pl-k">:</span> <span class="pl-c1">true</span>, </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-js-LC11" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span> support swiping on touch devices? accepts boolean, requires hammer.js</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-js-LC12" class="blob-code blob-code-inner js-file-line">            swipe <span class="pl-k">:</span> <span class="pl-c1">true</span> </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-js-LC13" class="blob-code blob-code-inner js-file-line">        };</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-js-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-js-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-en">makeBSS</span>(<span class="pl-s"><span class="pl-pds">'</span>.slideshow-class-goes-here<span class="pl-pds">'</span></span>, opts);</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/c6e0f5c47acb7bf9be16/raw/a1054f7516f48b094080d7e224b24894b2c09a56/gistfile1.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/c6e0f5c47acb7bf9be16#file-gistfile1-js">gistfile1.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+
+<h2>Demo/Examples</h2>
+    <h3>Example #1 (slideshow at top of this page)</h3>
+    <p>HTML markup:</p>
+    <script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/19bafdb1abf8f6b4e147.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14241053" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>bss-slides num1<span class="pl-pds">"</span></span> <span class="pl-e">tabindex</span>=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-e">autofocus</span>=<span class="pl-s"><span class="pl-pds">"</span>autofocus<span class="pl-pds">"</span></span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/img/medium.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Medium" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.flickr.com/photos/thomashawk/14586158819/<span class="pl-pds">"</span></span>&gt;Thomas Hawk&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-html-LC4" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-html-LC5" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-html-LC6" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/img/colorado.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Colorado" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.flickr.com/photos/stuckincustoms/88370744<span class="pl-pds">"</span></span>&gt;Trey Ratcliff&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-html-LC7" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-html-LC8" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-html-LC9" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/img/monte-vista.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Early Morning at the Monte Vista Wildlife Refuge, Colorado" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.flickr.com/photos/davesoldano/8572429635<span class="pl-pds">"</span></span>&gt;Dave Soldano&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-html-LC10" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-html-LC11" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-html-LC12" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/img/sunrise.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Sunrise in Eastern Colorado" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.flickr.com/photos/35528040@N04/6673031153<span class="pl-pds">"</span></span>&gt;Pam Morris&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-html-LC13" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-html-LC14" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-html-LC15" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/img/colorado-colors.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"colorado colors" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.flickr.com/photos/cptspock/2857543585<span class="pl-pds">"</span></span>&gt;Jasen Miller&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-html-LC16" class="blob-code blob-code-inner js-file-line">    &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-html-LC17" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c"><span class="pl-c">&lt;!--</span> // bss-slides <span class="pl-c">--&gt;</span></span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/19bafdb1abf8f6b4e147/raw/13a5bc2df47574d552b955a19db44e858daeec00/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/19bafdb1abf8f6b4e147#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+    <p>JavaScript code:</p>
+    <script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/a09d2726b5bfc92ea68c.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14241101" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>demo/js/hammer.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;<span class="pl-c"><span class="pl-c">&lt;!--</span> for swipe support on touch interfaces <span class="pl-c">--&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/better-simple-slideshow.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-html-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">var</span> opts <span class="pl-k">=</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-html-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    auto <span class="pl-k">:</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-html-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">        speed <span class="pl-k">:</span> <span class="pl-c1">3500</span>, </span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-html-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">        pauseOnHover <span class="pl-k">:</span> <span class="pl-c1">true</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-html-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    },</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-html-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    fullScreen <span class="pl-k">:</span> <span class="pl-c1">false</span>, </span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-html-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    swipe <span class="pl-k">:</span> <span class="pl-c1">true</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-html-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">};</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-html-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-en">makeBSS</span>(<span class="pl-s"><span class="pl-pds">'</span>.num1<span class="pl-pds">'</span></span>, opts);</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-html-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span>&lt;/<span class="pl-ent">script</span>&gt;</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/a09d2726b5bfc92ea68c/raw/4f18920aaf6201053d689c7140ddd34f7c866292/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/a09d2726b5bfc92ea68c#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+    
+    <h3>Example #2 (below)</h3>
+        <div class="bss-slides num2" tabindex="2" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	       <figure class="bss-show">
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/snowying.jpg" width="100%"><figcaption>"Snowying" by <a href="http://www.flickr.com/photos/fiddleoak/8511209344/">fiddleoak</a>.</figcaption> 
+	       </figure>
+            <figure>
+                <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/starlight.jpg" width="100%"><figcaption>"Starlight" by <a href="http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517">ChaoticMind75</a>.</figcaption> 
+	       </figure>
+	       <figure>
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/snowstorm.jpg" width="100%"><figcaption>"Snowstorm" by <a href="http://www.flickr.com/photos/tylerbeaulawrence/8539457508/">Beaulawrence</a>.</figcaption> 
+	       </figure>
+            <figure>
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/misty-winter-afternoon.jpg" width="100%"><figcaption>"Misty winter afternoon" by <a href="http://www.flickr.com/photos/22746515@N02/5277611659/">Bert Kaufmann</a>.</figcaption> 
+	       </figure>
+            <figure>
+		      <img src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/good-morning.jpg" width="100%"><figcaption>"Good Morning!" by <a href="http://www.flickr.com/photos/frank_wuestefeld/4306107546/">Frank Wuestefeld</a>.</figcaption> 
+	       </figure>
+        <span class="bss-prev">«</span><span class="bss-next">»</span><span class="bss-fullscreen"></span></div> <!-- // bss-slides --> 
+    
+<p>HTML markup:</p>
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/de90c78cb73673650a5a.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14241161" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>bss-slides num2<span class="pl-pds">"</span></span> <span class="pl-e">tabindex</span>=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line">   &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://themarklee.com/wp-content/uploads/2013/12/snowying.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Snowying" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.flickr.com/photos/fiddleoak/8511209344/<span class="pl-pds">"</span></span>&gt;fiddleoak&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-html-LC4" class="blob-code blob-code-inner js-file-line">   &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-html-LC5" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-html-LC6" class="blob-code blob-code-inner js-file-line">        &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://themarklee.com/wp-content/uploads/2013/12/starlight.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Starlight" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.flickr.com/photos/chaoticmind75/10738494123/in/set-72157626146319517<span class="pl-pds">"</span></span>&gt;ChaoticMind75&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-html-LC7" class="blob-code blob-code-inner js-file-line">   &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-html-LC8" class="blob-code blob-code-inner js-file-line">   &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-html-LC9" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://themarklee.com/wp-content/uploads/2013/12/snowstorm.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Snowstorm" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.flickr.com/photos/tylerbeaulawrence/8539457508/<span class="pl-pds">"</span></span>&gt;Beaulawrence&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-html-LC10" class="blob-code blob-code-inner js-file-line">   &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-html-LC11" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-html-LC12" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://themarklee.com/wp-content/uploads/2013/12/misty-winter-afternoon.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Misty winter afternoon" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.flickr.com/photos/22746515@N02/5277611659/<span class="pl-pds">"</span></span>&gt;Bert Kaufmann&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-html-LC13" class="blob-code blob-code-inner js-file-line">   &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-html-LC14" class="blob-code blob-code-inner js-file-line">    &lt;<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-html-LC15" class="blob-code blob-code-inner js-file-line">      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://themarklee.com/wp-content/uploads/2013/12/good-morning.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">figcaption</span>&gt;"Good Morning!" by &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.flickr.com/photos/frank_wuestefeld/4306107546/<span class="pl-pds">"</span></span>&gt;Frank Wuestefeld&lt;/<span class="pl-ent">a</span>&gt;.&lt;/<span class="pl-ent">figcaption</span>&gt; </td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-html-LC16" class="blob-code blob-code-inner js-file-line">   &lt;/<span class="pl-ent">figure</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-html-LC17" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c"><span class="pl-c">&lt;!--</span> // bss-slides <span class="pl-c">--&gt;</span></span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/de90c78cb73673650a5a/raw/f53caac86d88fca50334ea218b9636a2485fce85/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/de90c78cb73673650a5a#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+
+<p>JavaScript code:</p>
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/046103061c89cdf07e4a.js.download"></script><link rel="stylesheet" href="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/gist-embed-c2b1c51a2a8f23e346b3b1581e388f48.css"><div id="gist14241193" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-html" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-html ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-html-LC1" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/better-simple-slideshow.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-html-LC2" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-html-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">var</span> opts <span class="pl-k">=</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-html-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    auto <span class="pl-k">:</span> <span class="pl-c1">false</span>,</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-html-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    fullScreen <span class="pl-k">:</span> <span class="pl-c1">true</span>,</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-html-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    swipe <span class="pl-k">:</span> <span class="pl-c1">false</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-html-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">};</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-html-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-en">makeBSS</span>(<span class="pl-s"><span class="pl-pds">'</span>.num2<span class="pl-pds">'</span></span>, opts);</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-html-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-html-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span>&lt;/<span class="pl-ent">script</span>&gt;</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/leemark/046103061c89cdf07e4a/raw/662bbf25b988a34d1587ff5914af7875a0cd9a73/gistfile1.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/leemark/046103061c89cdf07e4a#file-gistfile1-html">gistfile1.html</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+    
+    
+</div> <!-- // content -->   
+<footer>Example photos are property of their respective owners, all code is <a href="https://github.com/leemark/better-simple-slideshow/blob/gh-pages/LICENSE">freely licensed for your use</a>. <br>Made especially for you by <a href="http://themarklee.com/">Mark Lee</a> aka <a href="http://twitter.com/@therealmarklee">@therealmarklee</a> <br><span>☮ + ♥</span></footer>        
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/hammer.min.js.download"></script><!-- for swipe support on touch interfaces -->
+<script src="./A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript_files/better-simple-slideshow.min.js.download"></script>
+<script>
+var opts = {
+    auto : {
+        speed : 3500, 
+        pauseOnHover : true
+    },
+    fullScreen : false, 
+    swipe : true
+};
+makeBSS('.num1', opts);
+
+var opts2 = {
+    auto : false,
+    fullScreen : true,
+    swipe : true
+};
+makeBSS('.num2', opts2);
+</script>
+
+
+</body></html>
