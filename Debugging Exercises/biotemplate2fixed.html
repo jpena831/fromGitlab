@@ -1,13 +1,13 @@
+<!doctype html>
+<!-- add declaration statement above -->
 <html>
 
 <head>
     <meta charset=utf-8 />
     <title>Sample Personal Website</title>
 
-</head>
-
-<body>
-    <style>
+<!--make sure style tag is nested in head tag-->
+<style>
         h1 {
             color: navy;
             text-align:center;
@@ -15,41 +15,48 @@
         }
 
         h2 {
-            color: darkslategray;
+            color: gray; /* darkslategray not a color, use other color  */
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            text-align left
-            font-family Arial, Helvetica, sans-serif
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        img
-            float: left
+        img{
+            float: left;
             margin-left: 1em;
-            margin-right: 1px
-
+            margin-right: 1px;
+        }
+        
         #socialmedia {
             margin-top: 2em;
         }
+        </style>
+</head>
+
+<body>
+    
     <h1>Your Name </h1>
     <h2> Here is your description! You do cool things, go you! </h2>
-        <img src=https://s24193.pcdn.co/wp-content/uploads/2016/07/entity-women-that-did-ada-lovelace-1320x720.jpg
+    <!-- ADD quotes in IMG tag -->
+        <img src="https://s24193.pcdn.co/wp-content/uploads/2016/07/entity-women-that-did-ada-lovelace-1320x720.jpg"
             width="400" height="400" alt="Profile pic">
         <h3>Education</h3>
         <p id="school">
-            Where did you go to school?
-        <h2>Work</h3>
+            Where did you go to school? </p>
+        <h3>Work</h3>
         <p id="work">
             Where do you work?
         </p>
         <h3>Experiences</h3>
         <p id="accomplishments">
             What are your accomplishments?
-        </p id="resume">
-        <h3>Resume
-        a href="url"> your resume</a>
+        </p>
+        <h3>Resume</h3>
+        <a href="url"> your resume</a>
         <br>
         <div id="socialmedia">
             <a href="https://twitter.com/CodeForHer">
@@ -71,3 +78,5 @@
             <!--That being said, feel free to connect with me on Linkedin LOL ;-) -->
     </div>
 </body>
+
+</html> <!-- ADD ending tag -->
