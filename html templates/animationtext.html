@@ -3,6 +3,7 @@
 <head>
 	<title>animation for text</title>
 <style>
+/*This is a common technique called a CSS reset. Different browsers use different default margins, causing sites to look different by margins. The * means "all elements" (a universal selector), so we are setting all elements to have zero margins, and zero padding, thus making them look the same in all browsers. */
  *{
     margin: 0;
     padding: 0;
@@ -28,15 +29,23 @@
 </head>
 
 <body>
+    <!--create an unique identifier called str -->
 <div id="str"></div>
 
 <script>
 var string = "Hello I'm Laith Haleem Form Ghammas Love Developing Websites";
-var str = string.split("");
-var el = document.getElementById('str');
+var str = string.split(""); //splits the strong stored in variable str which holds the sentence
+var el = document.getElementById('str'); //stores the div element id of str in variable called el to access the html body
+//create a function called animate
+//A JavaScript function is a block of code designed to perform a particular task.
+//A JavaScript function is executed when "something" invokes it (calls it).
 (function animate() {
-str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running); 
-var running = setTimeout(animate, 90);
+    //The shift() method removes the first item of an array
+    //.innerHTML access the body of the html document/returns the HTML content (inner HTML) of an element
+    //The question mark ? is an alternative to an if statement best used in the case where one of two values will be assigned to a variable based on a conditional statement
+    //The addition assignment operator (+=) adds a value to a variable
+str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running); //clearTimeout is a JavaScript method that clears a timer set
+var running = setTimeout(animate, 90); //create a variable called running that stores a JavaScript method called setTimeout() that evaluates an expression or function after a specified number of milliseconds, ex: 90 ms
 })();
 </script>
 </body>
